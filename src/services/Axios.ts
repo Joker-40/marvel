@@ -13,7 +13,6 @@ Axios.interceptors.request.use(
   config => {
     const newConfig = {...config};
     newConfig.url = convertToAuthURL(config.url || '');
-    console.log(newConfig.url);
     return newConfig;
   },
   _ => {

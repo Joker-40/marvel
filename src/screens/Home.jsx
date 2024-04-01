@@ -14,17 +14,19 @@ const Home = () => {
   };
 
   const {
-    data: characters,
+    data,
     isError,
     isFetching,
   } = useQuery({
     queryKey: ['characters'],
     queryFn: fetchCharacters,
     staleTime: 5000,
-    initialData: [],
+    initialData: {
+      characters: [],
+    },
   });
 
-  console.log(characters[0]);
+  console.log(data?.[0]);
 
   return (
     <Layout style={styles.container} level="1">

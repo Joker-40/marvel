@@ -21,9 +21,6 @@ const Home = () => {
     queryKey: ['characters'],
     queryFn: fetchCharacters,
     staleTime: 5000,
-    initialData: {
-      characters: [],
-    },
   });
 
   console.log(data?.[0]);
@@ -32,7 +29,7 @@ const Home = () => {
     <Layout style={styles.container} level="1">
       <Button
         appearance="filled"
-        onPress={() => queryClient.invalidateQueries('characters')}>
+        onPress={() => {}}>
         Refetch
       </Button>
     </Layout>
